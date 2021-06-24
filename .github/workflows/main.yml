@@ -1,0 +1,16 @@
+name: SAM Validate, Build, Test
+on: 
+  push:
+    branches: [feature/sam]
+
+jobs:
+  sam-deploy:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: SAM Build
+        run: |
+          sam build
+      - name: SAM Deploy
+        run: |
+          sam deploy --template-file .aws-sam/build/template.yaml
