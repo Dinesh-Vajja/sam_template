@@ -19,6 +19,11 @@ Resources:
       Runtime: nodejs14.x
       Policies: AWSLambdaDynamoDBExecutionRole
       Events:
+        testingsbucket:
+          Type: S3
+          Properties:
+            Bucket: !Ref SrcBucket
+            Events: s3:ObjectCreated:*
         Stream:
           Type: DynamoDB
           Properties:
