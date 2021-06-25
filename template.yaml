@@ -30,6 +30,13 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+        testingsbucket:
+          Type: S3
+          Properties:
+            Bucket: !Ref SrcBucket
+            Events: s3:ObjectCreated:*
+  SrcBucket:
+    Type: AWS::S3::Bucket
   DynamoDBTable:
     Type: AWS::DynamoDB::Table
     Properties: 
