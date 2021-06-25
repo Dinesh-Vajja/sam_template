@@ -35,7 +35,9 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-      - AttributeName: id
+      - AttributeName: customer_id
+        AttributeType: S
+      - AttributeName: TimeStamp
         AttributeType: S
       KeySchema:
       - AttributeName: id
