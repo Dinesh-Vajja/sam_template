@@ -23,5 +23,7 @@ jobs:
           sam build
       - name: SAM Deploy
         run: |
-          sam deploy --template-file .aws-sam/build/template.yaml
+          sam deploy --template-file .aws-sam/build/template.yaml \
+          --region us-east-1 \
+          --stack-name ${{ env.SAM_STACK_NAME }}
 
